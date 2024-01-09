@@ -25,6 +25,14 @@ function handleFileSelect(event) {
 }
 
 function processImage(img) {
+    // Check if the image needs to be resized
+    if (img.width !== 100 || img.height !== 100) {
+    // Ask the user if they want to resize the image
+    if (window.confirm("The image is not 100x100 pixels. Do you want to resize it?")) {
+      img.resize(100, 100);
+    }
+    }
+  
   targetImage = img;
   targetImage.loadPixels();
 

@@ -6,14 +6,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="utf-8" />
-
+  <title>ASCII Art Generator</title>
 </head>
 
 <body>
-  <input type="file" id="imageInput" accept="image/*">
-  <p>For best results, upload a 100x100 pixel image of a person with good contrast, which would look good in black and
-    white. You might have to zoom out to view the full image. :)</p>
-  <div id="asciiArt"></div>
+  <div class="flex-container">
+    <div class="text-container">
+      <h1>ASCII Art Generator</h1>
+      <p>For optimal results, upload an image with dimensions of 100x100 pixels. This size ensures the best balance between detail and clarity in the ASCII representation. Choose an image with high contrast and one that would look striking in black and white.</p>
+      <p>If your image isn't the perfect size, don't worry! We'll prompt you to resize it for the best ASCII art conversion. Accepting the resize will transform your image into the ideal format for ASCII art.</p>
+      <p>If you prefer to keep the original size, that's okay too! Just remember, larger images will take more time to process and might result in an ASCII art that's challenging to view due to its high resolution.</p>
+      <input type="file" id="imageInput" accept="image/*">
+    </div>
+    <div id="asciiArt" class="ascii-container"></div>
+  </div>
   <script src="sketch.js"></script>
 </body>
 

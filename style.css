@@ -1,13 +1,68 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #000;
-  font-family: 'Courier';
+  background-color: #1a1a1a;
+  font-family: 'Courier', monospace;
   color: #FFF;
-  font-size: 12pt;
-  line-height: 10pt;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-canvas {
-  display: block;
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.text-container {
+  max-width: 30rem;
+  margin: 20px;
+  text-align: left;
+}
+
+.ascii-container {
+  margin: 20px;
+  white-space: pre;
+  font-size: 8pt;
+  line-height: 7pt;
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+input[type="file"] {
+  margin-top: 20px;
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="file"]:hover {
+  background-color: #555;
+}
+
+h1 {
+  color: #f2f2f2;
+}
+
+p {
+  color: #ccc;
+}
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ascii-container {
+    order: -1; /* This will put the ASCII art above the text on small screens */
+  }
 }
