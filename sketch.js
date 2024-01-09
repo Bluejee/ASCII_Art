@@ -1,7 +1,7 @@
 // ASCII Art Generator using p5.js
 
 // Define the characters used for ASCII mapping based on their visual density
-const asciiCharacters = " `.'-~_;+=?7iI32yUZ%#Xg$@NQM";
+let asciiCharacters = " `.'-~_;+=?7iI32yUZ%#Xg$@NQM";
 
 let targetImage;
 let imageInput;
@@ -67,5 +67,23 @@ function processImage(img) {
       }
     }
     createDiv(asciiRow).parent("asciiArt"); // Create a new div for each row of ASCII characters
+  }
+}
+
+
+// Add event listener for the mode toggle
+document.getElementById('modeToggle').addEventListener('change', function() {
+  const asciiArtContainer = document.getElementById('asciiArt');
+  asciiArtContainer.classList.toggle('light-mode');
+  invertAsciiMapping(); // Call the function to invert the ASCII mapping
+});
+
+function invertAsciiMapping() {
+  const isLightMode = document.getElementById('asciiArt').classList.contains('light-mode');
+  // Change the ASCII mapping based on the mode
+  asciiCharacters = isLightMode ? asciiCharacters.split("").reverse().join("") : " `.'-~_;+=?7iI32yUZ%#Xg$@NQM";
+  // Re-render the ASCII art if an image has been processed
+  if (targetImage) {
+    processImage(targetImage);
   }
 }

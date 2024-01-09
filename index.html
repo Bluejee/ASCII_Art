@@ -13,10 +13,23 @@
   <div class="flex-container">
     <div class="text-container">
       <h1>ASCII Art Generator</h1>
-      <p>For optimal results, upload an image with dimensions of 100x100 pixels. This size ensures the best balance between detail and clarity in the ASCII representation. Choose an image with high contrast and one that would look striking in black and white.</p>
-      <p>If your image isn't the perfect size, don't worry! We'll prompt you to resize it for the best ASCII art conversion. Accepting the resize will transform your image into the ideal format for ASCII art.</p>
-      <p>If you prefer to keep the original size, that's okay too! Just remember, larger images will take more time to process and might result in an ASCII art that's challenging to view due to its high resolution.</p>
-      <input type="file" id="imageInput" accept="image/*">
+      <p>For optimal results, upload an image with dimensions of 100x100 pixels. This size ensures the best balance
+        between detail and clarity in the ASCII representation. Choose an image with high contrast and one that would
+        look striking in black and white.</p>
+      <p>If your image isn't the perfect size, don't worry! We'll prompt you to resize it for the best ASCII art
+        conversion. Accepting the resize will transform your image into the ideal format for ASCII art.</p>
+      <p>If you prefer to keep the original size, that's okay too! Just remember, larger images will take more time to
+        process and might result in an ASCII art that's challenging to view due to its high resolution.</p>
+      <div class="input_container">
+        <input type="file" id="imageInput" accept="image/*">
+        <div class="toggle_set">
+          <label class="switch">
+            <input type="checkbox" id="modeToggle">
+            <span class="slider round"></span>
+          </label>
+          <span>Light/Dark Mode</span>
+        </div>
+      </div>
     </div>
     <div id="asciiArt" class="ascii-container"></div>
   </div>
